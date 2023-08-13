@@ -2,106 +2,42 @@ document.querySelector('.btn').addEventListener('click', submit);
 
 window.addEventListener("DOMContentLoaded", () => {
     axios.get("https:crudcrud.com/api/a3f70396e4b7daa676205647ce9a6/data")
-    .then((res) => {console.log(res)})
-    .catch((err) => {console.log(err)})
+        .then((res) => { console.log(res) })
+        .catch((err) => { console.log(err) })
+
+        axios.delete("https:crudcrud.com/api/a3f70396e4b7daa676205647ce9a6/data/c165aedba13103e8f116bd")
+        .then((res) => { console.log(res) })
+        .catch((err) => { console.log(err) })
 })
 
 function submit(e) {
-    e.preventDefault();
-
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const number = document.querySelector('#number').value;
-    const obj = {
-        name,
-        email,
-        number
+	function submit(e) {
     }
-    axios.post(document.querySelector('.btn').addEventListener('click', submit);
 
-window.addEventListener("DOMContentLoaded", () => {
-    axios.get("https:crudcrud.com/api/a3f70396e4b7daa676205647ce9a6/data")
-    .then((res) => {console.log(res)})
-    .catch((err) => {console.log(err)})
-})
-
-function submit(e) {
-    e.preventDefault();
-
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const number = document.querySelector('#number').value;
-    const obj = {
-        name,
-        email,
-        number
-    }
     axios.post("https:crudcrud.com/api/a3f70396e4b7daa676205647ce9a6/data", obj)
-    .then((res) => {console.log(res)})
-    .catch((err) => {console.log(err)})
-   // const myobj = JSON.stringify(obj);
-   // localStorage.setItem(name, myobj);
+        .then((res) => { console.log(res) })
+        .catch((err) => { console.log(err) })
+
+    // const myobj = JSON.stringify(obj);
+    // localStorage.setItem(name, myobj);
+
     // add also after submit
     const button = document.createElement('button');
-    const button1 = document.createElement('button');
-    button.className = 'btn btn-danger btn-sm float-right delete';
-    button1.className = 'btn btn-primary btn-sm float-right delete';
-    button.appendChild(document.createTextNode('delete'));
-    button1.appendChild(document.createTextNode('edit'));
-    const x = document.createElement('h4');
-    x.className = 'h4';
-    const nameText = document.createTextNode(name + " " + email + " " + number + " ");
-    x.appendChild(nameText);
-    x.appendChild(button);
-    x.appendChild(button1);
-    const submit = document.querySelector('.btn');
-    submit.after(x);
+	function submit(e) {
     button.onclick = function (e) {
         e.preventDefault();
-        localStorage.removeItem(name);
+
+        // axios.delete("https://crudcrud.com/api/c218ee79a3494f87899d61a3be0de5ec/appointmentData/")
+        //     .then((res) => { console.log(res) })
+        //     .catch((err) => { console.log(err) })
+        //localStorage.removeItem(name);
         x.removeChild(nameText);
         x.removeChild(button);
         x.removeChild(button1);
     }
-    button1.onclick = function (el){
+    button1.onclick = function (el) {
         el.preventDefault();
-        document.querySelector('#name').value = obj.name;
-        document.querySelector('#email').value = obj.email;
-        document.querySelector('#number').value = obj.number;
-        localStorage.removeItem(name);
-        x.removeChild(nameText);
-        x.removeChild(button);
-        x.removeChild(button1);
-    }
-}, obj)
-    .then((res) => {console.log(res)})
-    .catch((err) => {console.log(err)})
-   // const myobj = JSON.stringify(obj);
-   // localStorage.setItem(name, myobj);
-    // add also after submit
-    const button = document.createElement('button');
-    const button1 = document.createElement('button');
-    button.className = 'btn btn-danger btn-sm float-right delete';
-    button1.className = 'btn btn-primary btn-sm float-right delete';
-    button.appendChild(document.createTextNode('delete'));
-    button1.appendChild(document.createTextNode('edit'));
-    const x = document.createElement('h4');
-    x.className = 'h4';
-    const nameText = document.createTextNode(name + " " + email + " " + number + " ");
-    x.appendChild(nameText);
-    x.appendChild(button);
-    x.appendChild(button1);
-    const submit = document.querySelector('.btn');
-    submit.after(x);
-    button.onclick = function (e) {
-        e.preventDefault();
-        localStorage.removeItem(name);
-        x.removeChild(nameText);
-        x.removeChild(button);
-        x.removeChild(button1);
-    }
-    button1.onclick = function (el){
-        el.preventDefault();
+
         document.querySelector('#name').value = obj.name;
         document.querySelector('#email').value = obj.email;
         document.querySelector('#number').value = obj.number;
